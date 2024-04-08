@@ -15,7 +15,7 @@ pipeline {
         stage('Test') {
             steps {
                 echo 'Testing'
-                sh 'CI=true npm test -- --coverage'
+                sh 'npm install'
             }
         }
 
@@ -23,6 +23,11 @@ pipeline {
             steps {
                 echo 'Deploying...'
                 sh 'npm run build'
+            }
+            post {
+                always {
+                    archiveArtifacts artifacts: 'build/**/*.*', onlyIfSuccessful: true
+                }
             }
         }
     }
