@@ -5,18 +5,18 @@ import App from './App';
 
 test('renders Tic-Tac-Toe title', () => {
   render(<App />);
-  const linkElement = screen.getByText(/Welcome to the TP/i);
-  expect(linkElement).toBeInTheDocument();
+  const titleElement = screen.getByText(/Tic-Tac-Toe/i);
+  expect(titleElement).toBeInTheDocument();
 });
 
 test('renders next player', () => {
   render(<App />);
-  const linkElement = screen.getByText(/Next player/i);
-  expect(linkElement).toBeInTheDocument();
+  const nextPlayerElement = screen.getByText(/Next player/i);
+  expect(nextPlayerElement).toBeInTheDocument();
 });
 
 test('renders go to game start', () => {
   render(<App />);
-  const linkElement = screen.getByText(/Reload game/i);
-  expect(linkElement).toBeInTheDocument();
+  const goToGameStartElement = screen.getByText(/Go to game start/i);
+  expect(goToGameStartElement).toBeInTheDocument();
 });
